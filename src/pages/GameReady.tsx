@@ -15,7 +15,14 @@ export function GameReady({ direction }: { direction: number }) {
   return (
     <Screen
       direction={direction}
-      action={<Button onClick={() => dispatch({ type: 'START_ROUND' })}>Start round 1</Button>}
+      action={
+        <div className="space-y-2.5">
+          <Button onClick={() => dispatch({ type: 'START_ROUND' })}>Start round 1</Button>
+          <Button variant="ghost" size="md" block onClick={() => dispatch({ type: 'GO_HOME' })}>
+            Home
+          </Button>
+        </div>
+      }
     >
       <m.div
         variants={riseGroup}

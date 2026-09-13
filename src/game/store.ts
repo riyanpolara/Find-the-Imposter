@@ -58,6 +58,7 @@ export type Action =
   | { type: 'COMPLETE_INTRO' }
   | { type: 'REPLAY_INTRO' }
   | { type: 'START_SETUP' }
+  | { type: 'VOTE_ELIMINATE'; targetId: string }
   | { type: 'STEP_PLAYER_COUNT'; delta: number }
   | { type: 'STEP_MR_WHITE_COUNT'; delta: number }
   | { type: 'SET_NAME'; index: number; value: string }
@@ -213,6 +214,19 @@ export function reducer(state: AppState, action: Action): AppState {
     case 'START_VOTING':
       if (state.phase !== 'ROUND') return state
       return forward(state, 'VOTING', { votingIndex: 0 })
+
+    case 'VOTE_ELIMINATE': {
+      if (state.phase !== 'VOTING' || !state.game) return state
+      const target = state.game.players.find((p) => p.id === action.targetId)
+      if (!target || target.eliminated) return state
+      const gameAfterVote: Game = {
+        ...state.game,
+        players: state.game.players.map((p) =>
+          p.id === action.targetId ? { ...p, eliminated: true } : p,
+        ),
+      }
+      return forward(state, 'ELIMINATION', { game: gameAfterVote, eliminatedId: action.targetId })
+    }
 
     case 'SUBMIT_VOTE': {
       if (state.phase !== 'VOTING' || !state.game) return state

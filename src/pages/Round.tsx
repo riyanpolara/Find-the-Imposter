@@ -23,7 +23,12 @@ export function Round({ direction }: { direction: number }) {
       direction={direction}
       scroll
       action={
-        <Button onClick={() => dispatch({ type: 'START_VOTING' })}>Everyone has spoken</Button>
+        <div className="space-y-2.5">
+          <Button onClick={() => dispatch({ type: 'START_VOTING' })}>Everyone has spoken</Button>
+          <Button variant="ghost" size="md" block onClick={() => dispatch({ type: 'GO_HOME' })}>
+            Home
+          </Button>
+        </div>
       }
     >
       <div className="flex flex-col items-center gap-7 text-center">
