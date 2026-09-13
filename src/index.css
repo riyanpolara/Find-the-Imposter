@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------
+   MR. WHITE — DESIGN TOKENS
+   Dark, premium, high contrast. Bone-white is the brand (Mr. White),
+   vermilion carries danger/suspicion, violet supplies the atmosphere.
+------------------------------------------------------------------- */
+@theme {
+  /* Surfaces — near-black with a cool violet cast, never flat grey */
+  --color-void: #07070b;
+  --color-abyss: #0b0a11;
+  --color-surface: #14121d;
+  --color-surface-2: #1c1a28;
+  --color-hairline: #2b2839;
+
+  /* Type */
+  --color-bone: #f5f2ea;
+  --color-mist: #a4a1b4;
+  --color-smoke: #6e6b80;
+
+  /* Accents */
+  --color-signal: #ff4433;
+  --color-signal-dim: #b02a20;
+  --color-halo: #7b5cff;
+
+  /* Typography */
+  --font-display:
+    'Space Grotesk Variable', 'Space Grotesk', ui-sans-serif, system-ui,
+    -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: var(--font-display);
+
+  /* Fluid type scale — sized for 320px first, capped for desktop */
+  --text-wordmark: clamp(3.5rem, 19vw, 6rem);
+  --text-wordmark--line-height: 0.84;
+  --text-wordmark--letter-spacing: -0.045em;
+  --text-wordmark--font-weight: 700;
+
+  --text-hero: clamp(2.25rem, 11vw, 3.5rem);
+  --text-hero--line-height: 0.92;
+  --text-hero--letter-spacing: -0.035em;
+  --text-hero--font-weight: 700;
+
+  --text-title: clamp(1.5rem, 6.5vw, 2rem);
+  --text-title--line-height: 1.1;
+  --text-title--letter-spacing: -0.02em;
+  --text-title--font-weight: 700;
+
+  --text-body: clamp(0.9375rem, 4vw, 1.0625rem);
+  --text-body--line-height: 1.5;
+
+  --text-label: 0.6875rem;
+  --text-label--line-height: 1;
+  --text-label--letter-spacing: 0.22em;
+  --text-label--font-weight: 600;
+
+  /* Motion — see docs/motion budget: fast by default */
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ------------------------------------------------------------------
+   BASE
+------------------------------------------------------------------- */
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    background-color: var(--color-void);
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    /* Deliberately transparent: an opaque body background paints *after*
+       negative-z descendants, which would bury the Atmosphere layer.
+       `html` above carries the colour and propagates it to the canvas. */
+    background-color: transparent;
+    color: var(--color-bone);
+    font-family: var(--font-sans);
+    font-synthesis-weight: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /* A pass-the-phone game should never rubber-band or pull-to-refresh */
+    overscroll-behavior: none;
+  }
+
+  /* Touch-first: kill the 300ms delay and the grey tap flash */
+  button,
+  a,
+  [role='button'],
+  input,
+  textarea,
+  select {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  button {
+    font: inherit;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  /* Visible focus for keyboard users only — never on touch taps */
+  :focus-visible {
+    outline: 2px solid var(--color-bone);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::selection {
+    background: var(--color-signal);
+    color: var(--color-bone);
+  }
+}
+
+/* ------------------------------------------------------------------
+   UTILITIES
+------------------------------------------------------------------- */
+
+/* Safe areas: notches, Dynamic Island, Android nav bars, browser chrome.
+   `max()` keeps a comfortable gutter on devices that report no inset. */
+@utility pad-safe-x {
+  padding-inline: max(1.25rem, env(safe-area-inset-left), env(safe-area-inset-right));
+}
+
+@utility pad-safe-t {
+  padding-top: max(1.25rem, env(safe-area-inset-top));
+}
+
+@utility pad-safe-b {
+  padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+}
+
+/* Fine film grain — one composited layer, no repaint cost */
+@utility grain {
+  position: relative;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ------------------------------------------------------------------
+   ATMOSPHERE
+   Two soft light sources drift behind the UI. Pure CSS on the
+   compositor (transform/opacity only) so it costs nothing on mobile.
+------------------------------------------------------------------- */
+@keyframes drift-a {
+  0%,
+  100% {
+    transform: translate3d(-6%, -3%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(6%, 4%, 0) scale(1.12);
+  }
+}
+
+@keyframes drift-b {
+  0%,
+  100% {
+    transform: translate3d(5%, 4%, 0) scale(1.08);
+  }
+  50% {
+    transform: translate3d(-4%, -5%, 0) scale(1);
+  }
+}
+
+@utility atmo-a {
+  animation: drift-a 22s ease-in-out infinite;
+  will-change: transform;
+}
+
+@utility atmo-b {
+  animation: drift-b 28s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <script>
+      // TEST HARNESS ONLY — deleted after this phase.
+      //
+      // The automated browser pane never paints, so requestAnimationFrame is
+      // never serviced and Framer Motion's frame loop stalls mid-transition.
+      // setTimeout can't stand in either: background pages clamp it to ~1Hz.
+      // A Worker's timers are not throttled, so we pump frames from there.
+      (function () {
+        var pending = new Map();
+        var id = 0;
+
+        window.requestAnimationFrame = function (cb) {
+          pending.set(++id, cb);
+          return id;
+        };
+        window.cancelAnimationFrame = function (key) {
+          pending.delete(key);
+        };
+
+        // Motion hands opacity/transform springs to the Web Animations API,
+        // which also refuses to advance in a document that never paints. Hiding
+        // Element.prototype.animate makes Motion fall back to its JS driver,
+        // which runs on the rAF loop we control above.
+        delete Element.prototype.animate;
+
+        var src = 'setInterval(function(){ postMessage(0) }, 16)';
+        var worker = new Worker(URL.createObjectURL(new Blob([src], { type: 'text/javascript' })));
+        worker.onmessage = function () {
+          if (!pending.size) return;
+          var due = Array.from(pending.entries());
+          pending.clear();
+          var now = performance.now();
+          for (var i = 0; i < due.length; i++) due[i][1](now);
+        };
+      })();
+    </script>
+    <title>Mr. White — harness</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- viewport-fit=cover -> notch/Dynamic Island insets reach our env() padding.
+         interactive-widget -> the soft keyboard resizes the layout instead of
+         scrolling it, which keeps the name-entry form usable in PHASE 4. -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover, interactive-widget=resizes-content"
+    />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#07070b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Mr. White" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta
+      name="description"
+      content="Mr. White — a pass-the-phone social deduction party game. Everyone gets the secret word. Everyone except the impostors."
+    />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>Mr. White</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
