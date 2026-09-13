@@ -10,7 +10,9 @@ import { riseGroup, riseItem, spring } from '@/utils/motion'
 export function GameOver({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
   const [stats, setStats] = useState<GameStats | null>(null)
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
+
   const civiliansWon = game.winner === 'CIVILIANS'
   const mrWhites = game.players.filter((p) => p.role === 'MR_WHITE')
 

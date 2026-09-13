@@ -24,7 +24,7 @@ import type { Phase } from '@/types/game'
  * One value — the phase — decides what is on screen. No `isVoting`,
  * `isCardOpen`, `isRoundStarted` booleans anywhere.
  */
-const SCREENS: Partial<Record<Phase, (props: { direction: number }) => React.ReactElement>> = {
+const SCREENS: Partial<Record<Phase, (props: { direction: number }) => React.ReactNode>> = {
   INTRO: IntroVideo,
   HOME: Home,
   SETUP_PLAYERS: SetupPlayers,

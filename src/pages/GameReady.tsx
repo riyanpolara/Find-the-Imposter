@@ -8,7 +8,8 @@ import { riseGroup, riseItem } from '@/utils/motion'
 
 export function GameReady({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const starter = game.players[startingIndexForRound(game, 1)]
 
   return (

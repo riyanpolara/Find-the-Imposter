@@ -14,7 +14,8 @@ import { useGame } from '@/hooks/useGame'
 export function CardReveal({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
   const [revealed, setRevealed] = useState(false)
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const player = currentPlayer(game)
 
   return (

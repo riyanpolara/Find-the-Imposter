@@ -12,7 +12,8 @@ import { riseGroup, riseItem } from '@/utils/motion'
  */
 export function Round({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const order = turnOrder(game, game.currentPlayerIndex)
   const starter = order[0]
   const stillIn = activePlayers(game).length

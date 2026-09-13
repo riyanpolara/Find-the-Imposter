@@ -13,7 +13,8 @@ import { riseGroup, riseItem } from '@/utils/motion'
  */
 export function PassPhone({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const player = currentPlayer(game)
   const dealt = game.players.filter((p) => p.role !== null).length
 

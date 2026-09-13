@@ -13,7 +13,8 @@ import { riseGroup, riseItem, spring } from '@/utils/motion'
 export function MrWhiteGuess({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
   const [guess, setGuess] = useState('')
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const player = game.players.find((p) => p.id === state.eliminatedId)!
   const outcome = state.guessOutcome
 

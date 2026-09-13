@@ -11,7 +11,8 @@ import { riseGroup, riseItem, spring } from '@/utils/motion'
  */
 export function Elimination({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const player = game.players.find((p) => p.id === state.eliminatedId)!
   const caught = player.role === 'MR_WHITE'
 

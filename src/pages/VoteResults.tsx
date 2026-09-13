@@ -9,7 +9,8 @@ import { spring } from '@/utils/motion'
 
 export function VoteResults({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const outcome = resolveVote(game, game.currentRound)
   const top = outcome.tally[0]?.count ?? 1
   const isTie = outcome.kind === 'TIE'

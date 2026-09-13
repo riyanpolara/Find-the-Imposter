@@ -18,7 +18,8 @@ import { riseGroup, riseItem, spring } from '@/utils/motion'
  */
 export function Voting({ direction }: { direction: number }) {
   const { state } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const ballot = voters(game)
   const voter = ballot[state.votingIndex] ?? ballot[0]
 
@@ -31,7 +32,8 @@ export function Voting({ direction }: { direction: number }) {
 
 function Ballot({ voterId, direction }: { voterId: string; direction: number }) {
   const { state, dispatch } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const ballot = voters(game)
   const voter = game.players.find((p) => p.id === voterId)!
   const targets = eligibleTargets(game, voterId)

@@ -15,7 +15,8 @@ function columnsFor(total: number): string {
 
 export function ChooseCard({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
-  const game = state.game!
+  const game = state.game
+  if (!game) return null
   const player = currentPlayer(game)
   const remaining = availableCards(game.cards).length
 
