@@ -8,6 +8,7 @@ import { Elimination } from '@/pages/Elimination'
 import { GameOver } from '@/pages/GameOver'
 import { GameReady } from '@/pages/GameReady'
 import { Home } from '@/pages/Home'
+import { IntroVideo } from '@/pages/IntroVideo'
 import { MrWhiteGuess } from '@/pages/MrWhiteGuess'
 import { PassPhone } from '@/pages/PassPhone'
 import { PlayerNames } from '@/pages/PlayerNames'
@@ -24,6 +25,7 @@ import type { Phase } from '@/types/game'
  * `isCardOpen`, `isRoundStarted` booleans anywhere.
  */
 const SCREENS: Partial<Record<Phase, (props: { direction: number }) => React.ReactElement>> = {
+  INTRO: IntroVideo,
   HOME: Home,
   SETUP_PLAYERS: SetupPlayers,
   SETUP_MR_WHITES: SetupMrWhites,
@@ -42,7 +44,7 @@ const SCREENS: Partial<Record<Phase, (props: { direction: number }) => React.Rea
 
 function CurrentScreen() {
   const { state } = useGame()
-  const Screen = SCREENS[state.phase] ?? Home
+  const Screen = SCREENS[state.phase] ?? IntroVideo
 
   return (
     // `mode="wait"` guarantees the outgoing screen is gone before the next

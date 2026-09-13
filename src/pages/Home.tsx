@@ -30,10 +30,15 @@ export function Home({ direction }: { direction: number }) {
           initial="initial"
           animate="animate"
           transition={{ delayChildren: 0.34 }}
-          className="space-y-4"
+          className="space-y-3"
         >
           <m.div variants={riseItem}>
             <Button onClick={() => dispatch({ type: 'START_SETUP' })}>Start game</Button>
+          </m.div>
+          <m.div variants={riseItem}>
+            <Button variant="ghost" size="md" onClick={() => dispatch({ type: 'REPLAY_INTRO' })}>
+              Watch Intro Video
+            </Button>
           </m.div>
           <m.p variants={riseItem} className="text-smoke text-center text-[0.8125rem]">
             One phone. Pass it around. 3&ndash;20 players.

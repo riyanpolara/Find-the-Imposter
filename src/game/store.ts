@@ -40,7 +40,7 @@ const DEFAULT_PLAYERS = 8
 const DEFAULT_MR_WHITES = 2
 
 export const initialState: AppState = {
-  phase: 'HOME',
+  phase: 'INTRO',
   direction: 1,
   setup: {
     playerCount: DEFAULT_PLAYERS,
@@ -55,6 +55,8 @@ export const initialState: AppState = {
 }
 
 export type Action =
+  | { type: 'COMPLETE_INTRO' }
+  | { type: 'REPLAY_INTRO' }
   | { type: 'START_SETUP' }
   | { type: 'STEP_PLAYER_COUNT'; delta: number }
   | { type: 'STEP_MR_WHITE_COUNT'; delta: number }
@@ -108,6 +110,12 @@ export function reducer(state: AppState, action: Action): AppState {
 
     case 'MARK_RECORDED':
       return { ...state, recordedGameId: action.gameId }
+
+    case 'COMPLETE_INTRO':
+      return forward(state, 'HOME')
+
+    case 'REPLAY_INTRO':
+      return { ...state, phase: 'INTRO', direction: -1 }
 
     case 'START_SETUP':
       return forward(state, 'SETUP_PLAYERS')

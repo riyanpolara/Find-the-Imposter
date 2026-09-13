@@ -11,6 +11,7 @@ export type Winner = 'CIVILIANS' | 'MR_WHITE'
  * before a `Game` does. One enum, one source of truth, no booleans.
  */
 export type Phase =
+  | 'INTRO'
   | 'HOME'
   | 'SETUP_PLAYERS'
   | 'SETUP_MR_WHITES'
