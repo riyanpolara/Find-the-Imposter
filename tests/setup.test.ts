@@ -5,6 +5,7 @@ import {
   clampPlayerCount,
   isValidConfig,
   maxMrWhites,
+  MR_WHITE_MAX,
   namesAreValid,
   normaliseName,
   PLAYER_MAX,
@@ -64,19 +65,32 @@ describe('invalid Mr White counts', () => {
   it('caps so Mr Whites always start outnumbered', () => {
     for (let n = PLAYER_MIN; n <= PLAYER_MAX; n++) {
       const cap = maxMrWhites(n)
+      expect(cap).toBeLessThanOrEqual(MR_WHITE_MAX)
       expect(isValidConfig(n, cap)).toBe(true)
       expect(cap).toBeLessThan(n - cap)
       expect(isValidConfig(n, cap + 1)).toBe(false)
     }
   })
 
+  it('allows 20 players with 8 Mr Whites, but never a ninth', () => {
+    expect(isValidConfig(20, 8)).toBe(true)
+    expect(isValidConfig(20, 9)).toBe(false)
+    expect(isValidConfig(20, 10)).toBe(false)
+    expect(maxMrWhites(16)).toBe(7)
+    for (const players of [17, 18, 19, 20]) {
+      expect(maxMrWhites(players)).toBe(8)
+    }
+    expect(clampMrWhiteCount(20, 99)).toBe(8)
+  })
+
   it('re-clamps when the table shrinks under it', () => {
     let s = drive(initialState, { type: 'START_SETUP' })
-    s = reducer(s, { type: 'STEP_PLAYER_COUNT', delta: 12 }) // maximum table size
+    s = reducer(s, { type: 'STEP_PLAYER_COUNT', delta: PLAYER_MAX - s.setup.playerCount })
+    expect(s.setup.playerCount).toBe(20)
     for (let i = 0; i < 20; i++) s = reducer(s, { type: 'STEP_MR_WHITE_COUNT', delta: 1 })
     expect(s.setup.mrWhiteCount).toBe(maxMrWhites(PLAYER_MAX))
 
-    s = reducer(s, { type: 'STEP_PLAYER_COUNT', delta: -17 }) // back to 3
+    s = reducer(s, { type: 'STEP_PLAYER_COUNT', delta: PLAYER_MIN - PLAYER_MAX })
     expect(s.setup.playerCount).toBe(3)
     expect(s.setup.mrWhiteCount).toBe(1)
     expect(isValidConfig(s.setup.playerCount, s.setup.mrWhiteCount)).toBe(true)

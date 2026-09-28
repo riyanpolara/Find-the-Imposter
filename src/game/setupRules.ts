@@ -4,8 +4,9 @@
  */
 
 export const PLAYER_MIN = 3
-export const PLAYER_MAX = 10
+export const PLAYER_MAX = 20
 export const MR_WHITE_MIN = 1
+export const MR_WHITE_MAX = 8
 export const NAME_MAX_LENGTH = 20
 
 /**
@@ -14,10 +15,10 @@ export const NAME_MAX_LENGTH = 20
  * "At least one Civilian" (the original wording) isn't enough: the win rule
  * says Mr. Whites win the moment they equal the Civilians, so a 5v5 game would
  * be over before the first clue. Capping at floor((n-1)/2) guarantees every
- * game starts playable.
+ * game starts playable, with an overall limit of eight Mr. Whites.
  */
 export function maxMrWhites(playerCount: number): number {
-  return Math.max(MR_WHITE_MIN, Math.floor((playerCount - 1) / 2))
+  return Math.min(MR_WHITE_MAX, Math.max(MR_WHITE_MIN, Math.floor((playerCount - 1) / 2)))
 }
 
 export function clampPlayerCount(value: number): number {

@@ -7,6 +7,20 @@ function groupVote(state: ReturnType<typeof dealtGame>, targetId: string) {
 }
 
 describe('one-phone group voting', () => {
+  it('plays a 20-person game through all eight Mr White eliminations', () => {
+    let s = drive(dealtGame(20, 8), { type: 'START_ROUND' })
+    expect(civilians(s.game!)).toHaveLength(12)
+    const whites = mrWhites(s.game!)
+    expect(whites).toHaveLength(8)
+    for (const [index, white] of whites.entries()) {
+      s = groupVote(s, white.id)
+      expect(s.phase).toBe('MR_WHITE_GUESS')
+      s = drive(s, { type: 'SUBMIT_GUESS', guess: 'definitely-wrong' }, { type: 'CONTINUE_AFTER_GUESS' })
+      expect(s.phase).toBe(index === 7 ? 'GAME_OVER' : 'ROUND')
+    }
+    expect(s.game!.winner).toBe('CIVILIANS')
+  })
+
   it('continues after a civilian is selected with one group vote', () => {
     const start = drive(dealtGame(6, 2), { type: 'START_ROUND' })
     const next = groupVote(start, civilians(start.game!)[0].id)

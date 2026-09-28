@@ -125,7 +125,7 @@ export function reducer(state: AppState, action: Action): AppState {
       return { ...state, phase: 'INTRO', direction: -1 }
 
     case 'START_SETUP': {
-      // Older saved tables may predate the 10-player limit.
+      // Normalize saved tables to the current player and role limits.
       const playerCount = clampPlayerCount(state.setup.playerCount)
       return forward(state, 'SETUP_PLAYERS', {
         setup: {

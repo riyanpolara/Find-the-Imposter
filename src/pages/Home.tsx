@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 import { useRef } from 'react'
 import { AgentMark } from '@/components/ui/AgentMark'
 import { Button } from '@/components/ui/Button'
+import { PLAYER_MAX, PLAYER_MIN } from '@/game/setupRules'
 import { useGame } from '@/hooks/useGame'
 
 const rules = [
@@ -26,7 +27,7 @@ export function Home({ direction }: { direction: number }) {
             <p className="eyebrow"><span /> GOOD FRIENDS. GREAT LIARS.</p>
             <h1>TRUST<br />NO<span className="outline-word">BODY.</span><span className="hero-asterisk" aria-hidden="true">✳</span></h1>
             <p className="hero-description">One secret word. A few suspicious friends.<br className="desktop-break" /> And someone who has absolutely no clue.</p>
-            <div className="game-facts"><span><b>3–10</b> friends</span><span><b>1</b> phone</span><span><b>Zero</b> poker faces</span></div>
+            <div className="game-facts"><span><b>{PLAYER_MIN}–{PLAYER_MAX}</b> friends</span><span><b>1</b> phone</span><span><b>Zero</b> poker faces</span></div>
           </div>
           <div className="hero-art" aria-label="Illustrated secret identity cards">
             <div className="orbit orbit-one" /><div className="orbit orbit-two" />

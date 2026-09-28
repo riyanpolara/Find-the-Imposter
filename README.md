@@ -1,6 +1,6 @@
 # Mr. White — Find the Imposter
 
-A mobile-first party game for **3–10 friends, one phone, and plenty of suspicious clues**. Pass the phone to reveal secret cards, give hints out loud, then record the group's vote. Mr. White has no word and must bluff their way through.
+A mobile-first party game for **3–20 friends, one phone, and plenty of suspicious clues**. Pass the phone to reveal secret cards, give hints out loud, then record the group's vote. Mr. White has no word and must bluff their way through.
 
 ## Features
 
@@ -38,7 +38,7 @@ The game is played face to face. Roles, words, clues, voting, and win checks run
 
 ## How to play
 
-1. Choose **3–10 players** and the number of Mr. Whites. They must start outnumbered by civilians. For example, six players can have four civilians and two Mr. Whites.
+1. Choose **3–20 players** and up to **8 Mr. Whites**. They must start outnumbered by civilians, so smaller groups have a lower limit. For example, 20 players can have **12 civilians and 8 Mr. Whites**, while six players can have four civilians and two Mr. Whites.
 2. Select **Easy, Medium, or Hard**, then a **Mixed, Indian, or Classic** word pack.
 3. Enter everyone's names. Pass the phone in turn so each player can choose and privately reveal a card.
 4. Every civilian sees the same secret word. Mr. White sees no word or category.

@@ -31,7 +31,7 @@ export function SetupPlayers({ direction }: { direction: number }) {
           <br />
           SUSPECTS.
         </m.h1>
-        <p className="setup-note">3–10 friends. One phone passed around the room. Everyone here is playing.</p>
+        <p className="setup-note">{PLAYER_MIN}–{PLAYER_MAX} friends. One phone passed around the room. Everyone here is playing.</p>
 
         <m.div variants={riseItem}>
           <Stepper

@@ -24,6 +24,7 @@ const CONFIGS = [
   { players: 10, whites: 3 },
   { players: 4, whites: 1 },
   { players: 10, whites: 4 },
+  { players: 20, whites: 8 },
 ] as const
 
 describe.each(CONFIGS)('$players players / $whites Mr White(s)', ({ players, whites }) => {
@@ -201,6 +202,7 @@ describe('the matrix as a whole', () => {
       '10/3',
       '4/1',
       '10/4',
+      '20/8',
     ])
   })
 

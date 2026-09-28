@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/Button'
 import { RosterSummary } from '@/components/ui/RosterSummary'
 import { StepHeader } from '@/components/ui/StepHeader'
 import { Stepper } from '@/components/ui/Stepper'
-import { MR_WHITE_MIN, maxMrWhites } from '@/game/setupRules'
+import { MR_WHITE_MAX, MR_WHITE_MIN, maxMrWhites } from '@/game/setupRules'
 import { useGame } from '@/hooks/useGame'
 import { riseGroup, riseItem } from '@/utils/motion'
 
@@ -58,7 +58,9 @@ export function SetupMrWhites({ direction }: { direction: number }) {
                 transition={{ duration: 0.2 }}
                 className="text-smoke text-[0.8125rem]"
               >
-                Mr. Whites have to stay outnumbered.
+                {max === MR_WHITE_MAX
+                  ? `Maximum ${MR_WHITE_MAX} Mr. Whites per game.`
+                  : 'Mr. Whites have to stay outnumbered.'}
               </m.p>
             )}
           </AnimatePresence>
