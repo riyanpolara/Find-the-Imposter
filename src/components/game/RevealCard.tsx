@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 
 import type { Role } from '@/types/game'
 import { duration } from '@/utils/motion'
+import { AgentMark } from '@/components/ui/AgentMark'
 
 type RevealCardProps = {
   role: Role
@@ -35,12 +36,13 @@ export function RevealCard({ role, word, category, revealed, onReveal }: RevealC
       >
         {/* Face down */}
         <m.span
+          aria-hidden={revealed}
           style={{ backfaceVisibility: 'hidden' }}
           animate={revealed ? undefined : { scale: [1, 1.02, 1] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: 'easeInOut' }}
           className="bg-surface absolute inset-0 grid place-items-center rounded-[1.75rem] border border-white/10 shadow-[0_24px_50px_-24px_rgba(0,0,0,0.95)]"
         >
-          <span className="text-smoke text-[2.5rem] leading-none font-bold">?</span>
+          <span className="flex flex-col items-center gap-6"><AgentMark className="w-32 text-acid" /><span className="text-label text-acid uppercase">Tap to reveal</span></span>
         </m.span>
 
         {/* Face up */}

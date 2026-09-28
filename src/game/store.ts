@@ -1,4 +1,5 @@
 import type { Game, Phase, SetupConfig, Winner } from '@/types/game'
+import { DEFAULT_WORD_OPTIONS, resolveWordOptions, type Difficulty, type WordPack } from '@/data/words'
 import {
   advanceToNextPlayer,
   createGame,
@@ -36,13 +37,14 @@ export type AppState = {
   recordedGameId: string | null
 }
 
-const DEFAULT_PLAYERS = 8
+const DEFAULT_PLAYERS = 6
 const DEFAULT_MR_WHITES = 2
 
 export const initialState: AppState = {
   phase: 'INTRO',
   direction: 1,
   setup: {
+    ...DEFAULT_WORD_OPTIONS,
     playerCount: DEFAULT_PLAYERS,
     mrWhiteCount: DEFAULT_MR_WHITES,
     names: Array.from({ length: DEFAULT_PLAYERS }, () => ''),
@@ -62,6 +64,8 @@ export type Action =
   | { type: 'STEP_PLAYER_COUNT'; delta: number }
   | { type: 'STEP_MR_WHITE_COUNT'; delta: number }
   | { type: 'SET_NAME'; index: number; value: string }
+  | { type: 'SET_DIFFICULTY'; difficulty: Difficulty }
+  | { type: 'SET_WORD_PACK'; wordPack: WordPack }
   | { type: 'NEXT' }
   | { type: 'BACK' }
   | { type: 'GO_HOME' }
@@ -84,12 +88,14 @@ export type Action =
 const BACK_TO: Partial<Record<Phase, Phase>> = {
   SETUP_PLAYERS: 'HOME',
   SETUP_MR_WHITES: 'SETUP_PLAYERS',
-  PLAYER_NAMES: 'SETUP_MR_WHITES',
+  SETUP_WORDS: 'SETUP_MR_WHITES',
+  PLAYER_NAMES: 'SETUP_WORDS',
 }
 
 const NEXT_FROM: Partial<Record<Phase, Phase>> = {
   SETUP_PLAYERS: 'SETUP_MR_WHITES',
-  SETUP_MR_WHITES: 'PLAYER_NAMES',
+  SETUP_MR_WHITES: 'SETUP_WORDS',
+  SETUP_WORDS: 'PLAYER_NAMES',
 }
 
 function forward(state: AppState, phase: Phase, patch: Partial<AppState> = {}): AppState {
@@ -118,14 +124,25 @@ export function reducer(state: AppState, action: Action): AppState {
     case 'REPLAY_INTRO':
       return { ...state, phase: 'INTRO', direction: -1 }
 
-    case 'START_SETUP':
-      return forward(state, 'SETUP_PLAYERS')
+    case 'START_SETUP': {
+      // Older saved tables may predate the 10-player limit.
+      const playerCount = clampPlayerCount(state.setup.playerCount)
+      return forward(state, 'SETUP_PLAYERS', {
+        setup: {
+          ...resolveWordOptions(state.setup),
+          playerCount,
+          mrWhiteCount: clampMrWhiteCount(playerCount, state.setup.mrWhiteCount),
+          names: resizeNames(state.setup.names, playerCount),
+        },
+      })
+    }
 
     case 'STEP_PLAYER_COUNT': {
       const playerCount = clampPlayerCount(state.setup.playerCount + action.delta)
       return {
         ...state,
         setup: {
+          ...state.setup,
           playerCount,
           // Shrinking the table can invalidate the Mr. White count, so re-clamp.
           mrWhiteCount: clampMrWhiteCount(playerCount, state.setup.mrWhiteCount),
@@ -145,6 +162,14 @@ export function reducer(state: AppState, action: Action): AppState {
           ),
         },
       }
+
+    case 'SET_DIFFICULTY':
+      if (state.phase !== 'SETUP_WORDS') return state
+      return { ...state, setup: { ...state.setup, ...resolveWordOptions({ ...state.setup, difficulty: action.difficulty }) } }
+
+    case 'SET_WORD_PACK':
+      if (state.phase !== 'SETUP_WORDS') return state
+      return { ...state, setup: { ...state.setup, ...resolveWordOptions({ ...state.setup, wordPack: action.wordPack }) } }
 
     case 'SET_NAME': {
       const names = [...state.setup.names]
@@ -271,13 +296,13 @@ export function reducer(state: AppState, action: Action): AppState {
 
       // A caught Mr. White gets one shot at the word before the board is judged.
       if (eliminated.role === 'MR_WHITE') {
-        return forward(state, 'MR_WHITE_GUESS')
+        return forward(state, 'MR_WHITE_GUESS', { guessOutcome: null })
       }
       return continueOrEnd(state, state.game, checkWinCondition(state.game))
     }
 
     case 'SUBMIT_GUESS': {
-      if (state.phase !== 'MR_WHITE_GUESS' || !state.game) return state
+      if (state.phase !== 'MR_WHITE_GUESS' || !state.game || state.guessOutcome) return state
       const correct = guessMatches(action.guess, state.game.secretWord)
       return {
         ...state,
@@ -296,6 +321,9 @@ export function reducer(state: AppState, action: Action): AppState {
 
     case 'PLAY_AGAIN': {
       // Same table, same split, brand new roles, word and cards.
+      if (clampPlayerCount(state.setup.playerCount) !== state.setup.playerCount) {
+        return reducer(state, { type: 'START_SETUP' })
+      }
       if (!namesAreValid(state.setup.names)) return state
       return forward(state, 'PASS_PHONE', {
         game: createGame(state.setup),

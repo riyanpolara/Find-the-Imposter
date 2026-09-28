@@ -1,4 +1,5 @@
 import type { Card, Game, Player, SetupConfig } from '@/types/game'
+import { resolveWordOptions } from '@/data/words'
 import { assignCard, findCard, generateCards } from './cardManager'
 import { makeId, type Rng } from './rng'
 import { generateRoles } from './roleManager'
@@ -23,7 +24,8 @@ export function createGame(config: SetupConfig, rng?: Rng): Game {
 
   const roles = generateRoles(playerCount, mrWhiteCount, rng)
   const cards = generateCards(roles, rng)
-  const { category, word } = pickSecretWord(rng)
+  const wordOptions = resolveWordOptions(config)
+  const { category, word } = pickSecretWord(rng, wordOptions)
 
   const players: Player[] = names.map((name) => ({
     id: makeId('player'),
@@ -33,6 +35,7 @@ export function createGame(config: SetupConfig, rng?: Rng): Game {
   }))
 
   return {
+    ...wordOptions,
     id: makeId('game'),
     players,
     cards,

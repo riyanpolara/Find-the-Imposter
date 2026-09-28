@@ -131,10 +131,10 @@ describe('card already selected', () => {
   })
 
   it('never deals the same card twice across a full table', () => {
-    const s = dealAll(setupGame(15, 4))
+    const s = dealAll(setupGame(10, 4))
     const dealt = s.game!.players.map((p) => p.cardId)
-    expect(new Set(dealt).size).toBe(15)
-    expect(new Set(s.game!.cards.map((c) => c.assignedPlayerId)).size).toBe(15)
+    expect(new Set(dealt).size).toBe(10)
+    expect(new Set(s.game!.cards.map((c) => c.assignedPlayerId)).size).toBe(10)
     expect(s.game!.players.every((p) => p.role !== null)).toBe(true)
   })
 })

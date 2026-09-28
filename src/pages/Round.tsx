@@ -24,7 +24,7 @@ export function Round({ direction }: { direction: number }) {
       scroll
       action={
         <div className="space-y-2.5">
-          <Button onClick={() => dispatch({ type: 'START_VOTING' })}>Everyone has spoken</Button>
+          <Button onClick={() => dispatch({ type: 'START_VOTING' })}>Everyone has spoken · Vote ↗</Button>
           <Button variant="ghost" size="md" block onClick={() => dispatch({ type: 'GO_HOME' })}>
             Home
           </Button>
@@ -59,7 +59,7 @@ export function Round({ direction }: { direction: number }) {
           </m.div>
 
           <m.p variants={riseItem} className="text-body text-mist max-w-[18rem]">
-            Say one word that hints at the secret word. Not too obvious.
+            Put the phone down. Give one hint each, out loud. Keep it clever, keep it subtle.
           </m.p>
 
           <m.div variants={riseItem} className="w-full">

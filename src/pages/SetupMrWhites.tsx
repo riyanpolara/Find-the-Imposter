@@ -18,7 +18,7 @@ export function SetupMrWhites({ direction }: { direction: number }) {
   return (
     <Screen
       direction={direction}
-      header={<StepHeader onBack={() => dispatch({ type: 'BACK' })} step={2} total={2} />}
+      header={<StepHeader onBack={() => dispatch({ type: 'BACK' })} step={2} total={4} />}
       action={<Button onClick={() => dispatch({ type: 'NEXT' })}>Continue</Button>}
     >
       <m.div
@@ -27,11 +27,13 @@ export function SetupMrWhites({ direction }: { direction: number }) {
         animate="animate"
         className="flex flex-col items-center gap-9 text-center"
       >
+        <p className="setup-kicker">02 / Add a little suspicion</p>
         <m.h1 variants={riseItem} className="text-hero text-bone">
-          HOW MANY
+          WHO’S
           <br />
-          MR. WHITES?
+          BLUFFING?
         </m.h1>
+        <p className="setup-note">Choose how many Mr. Whites get no word. Everyone else gets the same secret.</p>
 
         <m.div variants={riseItem}>
           <Stepper

@@ -23,7 +23,7 @@ export function setupGame(
   s = drive(s, { type: 'STEP_PLAYER_COUNT', delta: playerCount - s.setup.playerCount })
   s = drive(s, { type: 'NEXT' })
   s = drive(s, { type: 'STEP_MR_WHITE_COUNT', delta: mrWhiteCount - s.setup.mrWhiteCount })
-  s = drive(s, { type: 'NEXT' })
+  s = drive(s, { type: 'NEXT' }, { type: 'NEXT' })
   roster.forEach((value, index) => {
     s = drive(s, { type: 'SET_NAME', index, value })
   })

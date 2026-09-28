@@ -15,6 +15,7 @@ import { PlayerNames } from '@/pages/PlayerNames'
 import { Round } from '@/pages/Round'
 import { SetupMrWhites } from '@/pages/SetupMrWhites'
 import { SetupPlayers } from '@/pages/SetupPlayers'
+import { SetupWords } from '@/pages/SetupWords'
 import { VoteResults } from '@/pages/VoteResults'
 import { Voting } from '@/pages/Voting'
 import { useGame } from '@/hooks/useGame'
@@ -29,6 +30,7 @@ const SCREENS: Partial<Record<Phase, (props: { direction: number }) => React.Rea
   HOME: Home,
   SETUP_PLAYERS: SetupPlayers,
   SETUP_MR_WHITES: SetupMrWhites,
+  SETUP_WORDS: SetupWords,
   PLAYER_NAMES: PlayerNames,
   PASS_PHONE: PassPhone,
   CARD_DISTRIBUTION: ChooseCard,

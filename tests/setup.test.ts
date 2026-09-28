@@ -72,9 +72,9 @@ describe('invalid Mr White counts', () => {
 
   it('re-clamps when the table shrinks under it', () => {
     let s = drive(initialState, { type: 'START_SETUP' })
-    s = reducer(s, { type: 'STEP_PLAYER_COUNT', delta: 12 }) // 20 players
+    s = reducer(s, { type: 'STEP_PLAYER_COUNT', delta: 12 }) // maximum table size
     for (let i = 0; i < 20; i++) s = reducer(s, { type: 'STEP_MR_WHITE_COUNT', delta: 1 })
-    expect(s.setup.mrWhiteCount).toBe(maxMrWhites(20))
+    expect(s.setup.mrWhiteCount).toBe(maxMrWhites(PLAYER_MAX))
 
     s = reducer(s, { type: 'STEP_PLAYER_COUNT', delta: -17 }) // back to 3
     expect(s.setup.playerCount).toBe(3)
@@ -98,7 +98,7 @@ describe('empty names', () => {
   })
 
   it('blocks game generation', () => {
-    let s = drive(initialState, { type: 'START_SETUP' }, { type: 'NEXT' }, { type: 'NEXT' })
+    let s = drive(initialState, { type: 'START_SETUP' }, { type: 'NEXT' }, { type: 'NEXT' }, { type: 'NEXT' })
     s = reducer(s, { type: 'GENERATE_GAME' })
     expect(s.phase).toBe('PLAYER_NAMES')
     expect(s.game).toBeNull()
@@ -125,8 +125,8 @@ describe('duplicate names', () => {
   })
 
   it('blocks game generation', () => {
-    let s = drive(initialState, { type: 'START_SETUP' }, { type: 'NEXT' }, { type: 'NEXT' })
-    names(8).forEach((value, index) => {
+    let s = drive(initialState, { type: 'START_SETUP' }, { type: 'NEXT' }, { type: 'NEXT' }, { type: 'NEXT' })
+    names(s.setup.playerCount).forEach((value, index) => {
       s = reducer(s, { type: 'SET_NAME', index, value })
     })
     s = reducer(s, { type: 'SET_NAME', index: 3, value: 'player1' })

@@ -1,3 +1,5 @@
+import type { WordOptions } from '@/data/words'
+
 /** Every player is one of these. Mr. Whites never learn the secret word. */
 export type Role = 'CIVILIAN' | 'MR_WHITE'
 
@@ -15,6 +17,7 @@ export type Phase =
   | 'HOME'
   | 'SETUP_PLAYERS'
   | 'SETUP_MR_WHITES'
+  | 'SETUP_WORDS'
   | 'PLAYER_NAMES'
   | 'PASS_PHONE'
   | 'CARD_DISTRIBUTION'
@@ -54,7 +57,7 @@ export type Vote = {
   round: number
 }
 
-export type Game = {
+export type Game = Partial<WordOptions> & {
   id: string
   players: Player[]
   cards: Card[]
@@ -68,7 +71,7 @@ export type Game = {
 }
 
 /** Survives "Play Again" so nobody retypes names. */
-export type SetupConfig = {
+export type SetupConfig = Partial<WordOptions> & {
   playerCount: number
   mrWhiteCount: number
   names: string[]

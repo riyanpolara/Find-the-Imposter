@@ -16,7 +16,7 @@ type ButtonProps = Omit<HTMLMotionProps<'button'>, 'children'> & {
 
 const VARIANTS: Record<Variant, string> = {
   // Bone-on-black: the single unmistakable primary action on every screen.
-  primary: 'bg-bone text-void shadow-[0_1px_0_0_rgba(255,255,255,0.6)_inset]',
+  primary: 'bg-acid text-void hover:bg-acid/90 shadow-[0_4px_0_0_#829126]',
   secondary: 'bg-surface-2 text-bone border border-white/8',
   ghost: 'bg-transparent text-mist hover:text-bone',
   danger: 'bg-signal text-bone',
@@ -44,7 +44,7 @@ export function Button({
       whileTap={props.disabled ? undefined : { scale: 0.975 }}
       transition={spring.press}
       className={cn(
-        'inline-flex select-none items-center justify-center rounded-2xl font-semibold uppercase',
+        'game-button inline-flex select-none items-center justify-center gap-5 rounded-lg font-bold uppercase',
         'transition-colors duration-150 outline-none',
         'disabled:pointer-events-none disabled:opacity-35',
         isBlock && 'w-full',

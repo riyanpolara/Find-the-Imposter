@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 
 import { cn } from '@/utils/cn'
 import { pageVariants, spring } from '@/utils/motion'
+import { AgentMark } from '@/components/ui/AgentMark'
 
 type ScreenProps = {
   /** Direction of travel: 1 moving forward, -1 going back. */
@@ -48,20 +49,21 @@ export function Screen({
       animate="animate"
       exit="exit"
       transition={spring.screen}
-      className={cn('flex w-full flex-col', scroll ? 'h-[100dvh]' : 'min-h-[100dvh]')}
+      className={cn('game-screen flex w-full flex-col', scroll ? 'h-[100dvh]' : 'min-h-[100dvh]')}
     >
       <div
         className={cn(
-          'pad-safe-x pad-safe-t pad-safe-b mx-auto flex w-full flex-1 flex-col',
-          wide ? 'max-w-[34rem]' : 'max-w-[26rem]',
+          'game-shell pad-safe-x pad-safe-t pad-safe-b mx-auto flex min-h-0 w-full flex-1 flex-col',
+          wide ? 'max-w-[38rem]' : 'max-w-[32rem]',
           className,
         )}
       >
+        <div className="game-brand"><span><AgentMark /> MR. WHITE</span><span>TRUST NOBODY. ↗</span></div>
         {header ? <header className="shrink-0">{header}</header> : null}
 
         <main
           className={cn(
-            'flex min-h-0 flex-1 flex-col',
+            'game-main flex min-h-0 flex-1 flex-col py-6',
             center && !scroll && 'justify-center',
             // `-mx` + `px` keeps focus rings from being clipped by the scroller
             scroll && 'overflow-y-auto overscroll-contain -mx-1 px-1',

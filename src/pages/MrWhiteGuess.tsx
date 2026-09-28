@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Screen } from '@/components/layout/Screen'
 import { Button } from '@/components/ui/Button'
 import { useGame } from '@/hooks/useGame'
+import { checkWinCondition } from '@/game/winManager'
 import { riseGroup, riseItem, spring } from '@/utils/motion'
 
 /**
@@ -20,6 +21,7 @@ export function MrWhiteGuess({ direction }: { direction: number }) {
 
   if (outcome) {
     const correct = outcome === 'CORRECT'
+    const finished = correct || checkWinCondition(game) !== null
     return (
       <Screen
         direction={direction}
@@ -43,7 +45,7 @@ export function MrWhiteGuess({ direction }: { direction: number }) {
           </m.p>
 
           <m.p variants={riseItem} className="text-label text-smoke uppercase">
-            The word was
+            {finished ? 'The word was' : 'The secret stays safe'}
           </m.p>
 
           <m.h1
@@ -52,13 +54,13 @@ export function MrWhiteGuess({ direction }: { direction: number }) {
             transition={{ delay: 0.12, type: 'spring', stiffness: 340, damping: 22 }}
             className="text-hero text-bone break-words uppercase"
           >
-            {game.secretWord}
+            {finished ? game.secretWord : 'NICE TRY.'}
           </m.h1>
 
           <m.p variants={riseItem} className="text-body text-mist max-w-[18rem] pt-1">
             {correct
               ? `${player.name} worked it out from the clues.`
-              : `${player.name} is out of the game.`}
+              : `${player.name} is out.${finished ? '' : ' Another Mr. White is still in. Keep the word to yourselves.'}`}
           </m.p>
         </m.div>
       </Screen>
@@ -130,7 +132,7 @@ export function MrWhiteGuess({ direction }: { direction: number }) {
                 transition={spring.soft}
                 className="text-smoke pt-3 text-[0.75rem]"
               >
-                Capitals and extra spaces don&rsquo;t matter.
+                Capitals, spaces and common listed spellings are accepted.
               </m.p>
             )}
           </AnimatePresence>

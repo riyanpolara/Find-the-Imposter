@@ -16,7 +16,7 @@ export function SetupPlayers({ direction }: { direction: number }) {
   return (
     <Screen
       direction={direction}
-      header={<StepHeader onBack={() => dispatch({ type: 'BACK' })} step={1} total={2} />}
+      header={<StepHeader onBack={() => dispatch({ type: 'BACK' })} step={1} total={4} />}
       action={<Button onClick={() => dispatch({ type: 'NEXT' })}>Continue</Button>}
     >
       <m.div
@@ -25,11 +25,13 @@ export function SetupPlayers({ direction }: { direction: number }) {
         animate="animate"
         className="flex flex-col items-center gap-9 text-center"
       >
+        <p className="setup-kicker">01 / Gather your people</p>
         <m.h1 variants={riseItem} className="text-hero text-bone">
-          HOW MANY
+          THE USUAL
           <br />
-          PLAYERS?
+          SUSPECTS.
         </m.h1>
+        <p className="setup-note">3–10 friends. One phone passed around the room. Everyone here is playing.</p>
 
         <m.div variants={riseItem}>
           <Stepper

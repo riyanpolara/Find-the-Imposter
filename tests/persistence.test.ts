@@ -133,6 +133,22 @@ describe('refreshing during voting', () => {
 })
 
 describe('close tab and reopen', () => {
+  it('fills in word preferences for an older save without changing its secret', () => {
+    const s = dealtGame(6, 2)
+    const legacySetup = { playerCount: s.setup.playerCount, mrWhiteCount: s.setup.mrWhiteCount, names: s.setup.names }
+    store.set(STORAGE_KEY, JSON.stringify({version:1, state:{...s, setup:legacySetup}}))
+    const restored = loadState()!
+    expect(restored.setup.difficulty).toBe('easy')
+    expect(restored.setup.wordPack).toBe('mixed')
+    expect(restored.game!.secretWord).toBe(s.game!.secretWord)
+  })
+
+  it('restores selected difficulty and pack', () => {
+    const s = dealtGame(6, 2)
+    saveState({...s, setup:{...s.setup, difficulty:'hard', wordPack:'india'}})
+    expect(loadState()!.setup).toMatchObject({difficulty:'hard',wordPack:'india'})
+  })
+
   it('restores a full game round-trip', () => {
     let s = drive(dealtGame(10, 3), { type: 'START_ROUND' })
     s = voteOut(s, civilians(s.game!)[0].id)

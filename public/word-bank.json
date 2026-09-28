@@ -1,0 +1,2639 @@
+{
+  "version": 1,
+  "words": [
+    {
+      "word": "Pizza",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Burger",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Ice Cream",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": [
+        "Icecream"
+      ]
+    },
+    {
+      "word": "Chocolate",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Popcorn",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Sandwich",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Noodles",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Cheese",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Honey",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Banana",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Apple",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Cake",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Milk",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Coffee",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Egg",
+      "category": "Food",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Pancake",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Waffle",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Doughnut",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": [
+        "Donut"
+      ]
+    },
+    {
+      "word": "Sushi",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Taco",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Lasagna",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Croissant",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Omelette",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": [
+        "Omelet"
+      ]
+    },
+    {
+      "word": "Brownie",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Marshmallow",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Peanut Butter",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Lemonade",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Mushroom",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Pumpkin",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Coconut",
+      "category": "Food",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Sourdough",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Tiramisu",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Kimchi",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Hummus",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Risotto",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Quinoa",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Wasabi",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Guacamole",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Souffle",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": [
+        "Soufflé"
+      ]
+    },
+    {
+      "word": "Truffle",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Saffron",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Nutmeg",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Artichoke",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Asparagus",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Balsamic Vinegar",
+      "category": "Food",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Umbrella",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Mirror",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Candle",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Pillow",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Clock",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Toothbrush",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Scissors",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Balloon",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Wallet",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Broom",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Bucket",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Camera",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Smartphone",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Bicycle",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Train",
+      "category": "Everyday Objects",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Compass",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Binoculars",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Projector",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Microphone",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Thermometer",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Fire Extinguisher",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Escalator",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Hammock",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Submarine",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Helicopter",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Drone",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Telescope",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Stethoscope",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Typewriter",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Seat Belt",
+      "category": "Everyday Objects",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Kaleidoscope",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Metronome",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Periscope",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Sundial",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Hourglass",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Gyroscope",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Anvil",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Tuning Fork",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Sextant",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Geiger Counter",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Seismograph",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Barometer",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Prism",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Lockpick",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Parachute",
+      "category": "Everyday Objects",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Dog",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Cat",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Tiger",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Elephant",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Peacock",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Monkey",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Camel",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Rabbit",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Snake",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Butterfly",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Sun",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Moon",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Rain",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Rainbow",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Mountain",
+      "category": "Animals & Nature",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Dolphin",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Penguin",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Octopus",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Crocodile",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Squirrel",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Firefly",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Flamingo",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Chameleon",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Jellyfish",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Waterfall",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Volcano",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Glacier",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Coral Reef",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Cactus",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Thunderstorm",
+      "category": "Animals & Nature",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Platypus",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Axolotl",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Pangolin",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Narwhal",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Mantis",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Kingfisher",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Mangrove",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Estuary",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Aurora",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Eclipse",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Geyser",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Mirage",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Fossil",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Quicksand",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Bioluminescence",
+      "category": "Animals & Nature",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "School",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Beach",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Airport",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Hospital",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Library",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Cinema",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Garden",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Zoo",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Birthday",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Football",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Swimming",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Dancing",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Painting",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Camping",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Shopping",
+      "category": "Places & Activities",
+      "difficulty": "easy",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Museum",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Aquarium",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Lighthouse",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Observatory",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Greenhouse",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Escape Room",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Roller Coaster",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Archery",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Fencing",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Marathon",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Pottery",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Origami",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Treasure Hunt",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Magic Show",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Rock Climbing",
+      "category": "Places & Activities",
+      "difficulty": "medium",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Labyrinth",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Planetarium",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Archaeology",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Camouflage",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Hibernation",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Metamorphosis",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Time Capsule",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Optical Illusion",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Ventriloquism",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Cryptography",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Constellation",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Time Travel",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Deja Vu",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": [
+        "Déjà Vu"
+      ]
+    },
+    {
+      "word": "Telepathy",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Paradox",
+      "category": "Places & Activities",
+      "difficulty": "hard",
+      "pack": "classic",
+      "aliases": []
+    },
+    {
+      "word": "Samosa",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dosa",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Idli",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Idly"
+      ]
+    },
+    {
+      "word": "Biryani",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Biriyani"
+      ]
+    },
+    {
+      "word": "Chai",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Tea"
+      ]
+    },
+    {
+      "word": "Jalebi",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pani Puri",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Panipuri",
+        "Golgappa",
+        "Golgappe",
+        "Puchka",
+        "Phuchka"
+      ]
+    },
+    {
+      "word": "Roti",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Chapati",
+        "Chapatti"
+      ]
+    },
+    {
+      "word": "Paratha",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Lassi",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Gulab Jamun",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Gulabjamun"
+      ]
+    },
+    {
+      "word": "Vada Pav",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Vadapav"
+      ]
+    },
+    {
+      "word": "Pav Bhaji",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dal",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pakora",
+      "category": "Indian Food",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Pakoda"
+      ]
+    },
+    {
+      "word": "Dhokla",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Poha",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Rajma",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chole Bhature",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Chhole Bhature",
+        "Chole Bhatura"
+      ]
+    },
+    {
+      "word": "Aloo Tikki",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Rasgulla",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Rasgola",
+        "Rosogolla",
+        "Rosogulla"
+      ]
+    },
+    {
+      "word": "Kulfi",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kheer",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Khichdi",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Khichadi",
+        "Khichri"
+      ]
+    },
+    {
+      "word": "Upma",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Thepla",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Modak",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Butter Chicken",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Filter Coffee",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Momos",
+      "category": "Indian Food",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Litti Chokha",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dal Baati Churma",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": [
+        "Dal Bati Churma",
+        "Daal Baati Churma"
+      ]
+    },
+    {
+      "word": "Appam",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Puttu",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Ghewar",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Undhiyu",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Puran Poli",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Mishti Doi",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Rogan Josh",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pesarattu",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Avial",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Khandvi",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Sandesh",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chhena Poda",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": [
+        "Chena Poda"
+      ]
+    },
+    {
+      "word": "Malpua",
+      "category": "Indian Food",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Cricket",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Carrom",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Ludo",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kabaddi",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kite",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Auto Rickshaw",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Autorickshaw",
+        "Auto",
+        "Rickshaw"
+      ]
+    },
+    {
+      "word": "Tiffin",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pressure Cooker",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Saree",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Sari"
+      ]
+    },
+    {
+      "word": "Kurta",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Bindi",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Bangles",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Mehndi",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Mehendi",
+        "Henna"
+      ]
+    },
+    {
+      "word": "Slippers",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "School Uniform",
+      "category": "Indian Life & Games",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kho Kho",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Kho-Kho"
+      ]
+    },
+    {
+      "word": "Gilli Danda",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Gilli-Danda",
+        "Gulli Danda"
+      ]
+    },
+    {
+      "word": "Lagori",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Pitthu",
+        "Pithu",
+        "Pittu",
+        "Seven Stones"
+      ]
+    },
+    {
+      "word": "Antakshari",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Gully Cricket",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dabbawala",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dhaba",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chai Stall",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kirana Shop",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Cycle Rickshaw",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Local Train",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Steel Thali",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Thali"
+      ]
+    },
+    {
+      "word": "Dupatta",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Turban",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Charpai",
+      "category": "Indian Life & Games",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pallankuzhi",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Ganjifa",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kancha",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": [
+        "Marbles"
+      ]
+    },
+    {
+      "word": "Chaupar",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Aadu Puli Aattam",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Mallakhamb",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kalaripayattu",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Silambam",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Akhada",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Jharokha",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Matka",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kulhad",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": [
+        "Kulhar"
+      ]
+    },
+    {
+      "word": "Sil Batta",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chakla Belan",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Charkha",
+      "category": "Indian Life & Games",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Diwali",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Deepavali",
+        "Dipavali"
+      ]
+    },
+    {
+      "word": "Holi",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Holi Festival"
+      ]
+    },
+    {
+      "word": "Raksha Bandhan",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Rakhi",
+        "Rakshabandhan"
+      ]
+    },
+    {
+      "word": "Eid",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Christmas",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Navratri",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dussehra",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Dasara",
+        "Dusshera",
+        "Vijayadashami"
+      ]
+    },
+    {
+      "word": "Ganesh Chaturthi",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Rangoli",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Diya",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Bollywood",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dhol",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Tabla",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Wedding",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Baraat",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Onam",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pongal",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Baisakhi",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Vaisakhi"
+      ]
+    },
+    {
+      "word": "Bihu",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Lohri",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Durga Puja",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Janmashtami",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Garba",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Bhangra",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Dandiya",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kathak",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Bharatanatyam",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Bharatnatyam",
+        "Bharata Natyam",
+        "Bharat Natyam"
+      ]
+    },
+    {
+      "word": "Sitar",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Shehnai",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kathputli",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Kathputali"
+      ]
+    },
+    {
+      "word": "Kathakali",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kuchipudi",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Odissi",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Mohiniyattam",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Sattriya",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Yakshagana",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chhau",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Madhubani",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Warli Painting",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chikankari",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pashmina",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Bandhani",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kalamkari",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Pattachitra",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Bidriware",
+      "category": "Indian Festivals & Arts",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Taj Mahal",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "India Gate",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Red Fort",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Gateway of India",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Qutub Minar",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Qutb Minar",
+        "Qutubminar"
+      ]
+    },
+    {
+      "word": "Golden Temple",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Harmandir Sahib"
+      ]
+    },
+    {
+      "word": "Goa",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Mumbai",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Delhi",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Jaipur",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kerala",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Himalayas",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Ganga",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": [
+        "Ganges"
+      ]
+    },
+    {
+      "word": "Thar Desert",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chennai",
+      "category": "Indian Places",
+      "difficulty": "easy",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Hawa Mahal",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Charminar",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Mysore Palace",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Mysuru Palace"
+      ]
+    },
+    {
+      "word": "Dal Lake",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Howrah Bridge",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Marine Drive",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Rann of Kutch",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Rann of Kachchh"
+      ]
+    },
+    {
+      "word": "Sundarbans",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Kaziranga",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Darjeeling",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Varanasi",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Banaras",
+        "Benares",
+        "Kashi"
+      ]
+    },
+    {
+      "word": "Ladakh",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Hampi",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Ajanta Caves",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Konark Sun Temple",
+      "category": "Indian Places",
+      "difficulty": "medium",
+      "pack": "india",
+      "aliases": [
+        "Konark Temple"
+      ]
+    },
+    {
+      "word": "Rani ki Vav",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": [
+        "Rani-ki-Vav"
+      ]
+    },
+    {
+      "word": "Dholavira",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Sanchi Stupa",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": [
+        "Sanchi"
+      ]
+    },
+    {
+      "word": "Bhimbetka",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Fatehpur Sikri",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Elephanta Caves",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Ellora Caves",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Jantar Mantar",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Mahabalipuram",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": [
+        "Mamallapuram"
+      ]
+    },
+    {
+      "word": "Pattadakal",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Valley of Flowers",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Loktak Lake",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Living Root Bridge",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Cellular Jail",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    },
+    {
+      "word": "Chand Baori",
+      "category": "Indian Places",
+      "difficulty": "hard",
+      "pack": "india",
+      "aliases": []
+    }
+  ]
+}

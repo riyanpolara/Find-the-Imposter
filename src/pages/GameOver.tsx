@@ -11,18 +11,14 @@ export function GameOver({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
   const [stats, setStats] = useState<GameStats | null>(null)
   const game = state.game
-  if (!game) return null
-
-  const civiliansWon = game.winner === 'CIVILIANS'
-  const mrWhites = game.players.filter((p) => p.role === 'MR_WHITE')
-
-  const alreadyRecorded = state.recordedGameId === game.id
+  const alreadyRecorded = state.recordedGameId === game?.id
   const guessedCorrectly = state.guessOutcome === 'CORRECT'
 
   // Log the finished game and pull the global tally. Both are best-effort:
   // if Supabase isn't configured or the phone is offline, nothing here runs
   // and the screen renders exactly as it always has.
   useEffect(() => {
+    if (!game) return
     let live = true
 
     const run = async () => {
@@ -44,7 +40,11 @@ export function GameOver({ direction }: { direction: number }) {
     }
     // Keyed on the game id: one log per finished game, never on re-render.
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [game.id])
+  }, [game?.id])
+
+  if (!game) return null
+  const civiliansWon = game.winner === 'CIVILIANS'
+  const mrWhites = game.players.filter((p) => p.role === 'MR_WHITE')
 
   return (
     <Screen
@@ -54,8 +54,8 @@ export function GameOver({ direction }: { direction: number }) {
       action={
         <div className="space-y-2.5">
           <Button onClick={() => dispatch({ type: 'PLAY_AGAIN' })}>Play again</Button>
-          <Button variant="ghost" size="md" block onClick={() => dispatch({ type: 'GO_HOME' })}>
-            Home
+          <Button variant="secondary" block onClick={() => dispatch({ type: 'GO_HOME' })}>
+            <span aria-hidden="true">←</span> Back to home
           </Button>
         </div>
       }
@@ -98,7 +98,7 @@ export function GameOver({ direction }: { direction: number }) {
           <m.p variants={riseItem} className="text-body text-mist max-w-[18rem]">
             {civiliansWon
               ? 'Every Mr. White has been found.'
-              : 'The impostors were never caught in time.'}
+              : guessedCorrectly ? 'Caught in the act. Still cracked the secret word.' : 'The Mr. Whites now match or outnumber the civilians.'}
           </m.p>
         </m.div>
 

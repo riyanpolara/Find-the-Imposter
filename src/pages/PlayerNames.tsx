@@ -49,7 +49,7 @@ export function PlayerNames({ direction }: { direction: number }) {
       }
       action={
         <Button onClick={submit} className={complete ? undefined : 'opacity-60'}>
-          Start game
+          Deal the secret cards ↗
         </Button>
       }
     >
@@ -58,8 +58,9 @@ export function PlayerNames({ direction }: { direction: number }) {
         animate={{ opacity: 1, y: 0 }}
         className="text-title text-bone pb-5"
       >
-        WHO IS PLAYING?
+        NAME YOUR SUSPECTS.
       </m.h1>
+      <p className="text-sm text-mist pb-5">04 / Use names everyone in the room will recognise.</p>
 
       <div className="flex flex-col gap-2.5 pb-2">
         {names.map((name, index) => (

@@ -1,5 +1,6 @@
 import type { AppState } from './store'
 import { initialState } from './store'
+import { resolveWordOptions } from '@/data/words'
 
 const STORAGE_KEY = 'mr-white-game-v1'
 const SCHEMA_VERSION = 1
@@ -63,6 +64,7 @@ export function loadState(): AppState | null {
     return {
       ...initialState,
       ...restored,
+      setup: { ...restored.setup, ...resolveWordOptions(restored.setup) },
       phase: rewound ?? restored.phase,
       // Never resume mid-transition.
       direction: 1,

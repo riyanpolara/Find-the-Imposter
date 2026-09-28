@@ -32,7 +32,7 @@ export function CardReveal({ direction }: { direction: number }) {
           disabled={!revealed}
           variant={revealed ? 'primary' : 'secondary'}
         >
-          {revealed ? 'Hide card' : 'Tap the card first'}
+          {revealed ? 'Hide card & pass phone' : 'Tap the card first'}
         </Button>
       }
     >

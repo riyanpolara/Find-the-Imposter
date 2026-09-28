@@ -1,149 +1,103 @@
-import { useEffect, useRef, useState } from 'react'
-import { m } from 'framer-motion'
-
-import { Screen } from '@/components/layout/Screen'
-import { Button } from '@/components/ui/Button'
+import { m, useReducedMotion } from 'framer-motion'
+import { useRef, useState } from 'react'
+import { AgentMark } from '@/components/ui/AgentMark'
 import { useGame } from '@/hooks/useGame'
-import { riseGroup, riseItem } from '@/utils/motion'
 
 export function IntroVideo({ direction }: { direction: number }) {
   const { dispatch } = useGame()
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const [isMuted, setIsMuted] = useState(true)
-  const [isPlaying, setIsPlaying] = useState(true)
+  const reduceMotion = useReducedMotion()
+  const video = useRef<HTMLVideoElement>(null)
+  const finishing = useRef(false)
+  const [muted, setMuted] = useState(true)
+  const [playing, setPlaying] = useState(false)
+  const [ready, setReady] = useState(false)
+  const [failed, setFailed] = useState(false)
   const [progress, setProgress] = useState(0)
 
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const handleTimeUpdate = () => {
-      if (video.duration) {
-        setProgress((video.currentTime / video.duration) * 100)
-      }
-    }
-
-    video.addEventListener('timeupdate', handleTimeUpdate)
-    return () => {
-      video.removeEventListener('timeupdate', handleTimeUpdate)
-    }
-  }, [])
-
-  const handleFinish = () => {
+  const finish = () => {
+    if (finishing.current) return
+    finishing.current = true
+    video.current?.pause()
     dispatch({ type: 'COMPLETE_INTRO' })
   }
 
-  const togglePlay = () => {
-    if (!videoRef.current) return
-    if (isPlaying) {
-      videoRef.current.pause()
-      setIsPlaying(false)
-    } else {
-      videoRef.current.play()
-      setIsPlaying(true)
+  const togglePlay = async () => {
+    if (!video.current) return
+    if (!video.current.paused) video.current.pause()
+    else {
+      try { await video.current.play() } catch { setPlaying(false) }
     }
   }
 
-  const toggleMute = () => {
-    if (!videoRef.current) return
-    videoRef.current.muted = !isMuted
-    setIsMuted(!isMuted)
-  }
-
   return (
-    <Screen
-      direction={direction}
-      header={
-        <m.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-center justify-between py-2"
-        >
-          <div className="text-label text-smoke flex items-center gap-2 uppercase">
-            <span className="bg-signal size-1.5 rounded-full animate-pulse" />
-            Intro
-          </div>
-          <button
-            type="button"
-            onClick={toggleMute}
-            className="bg-surface-2 text-bone border-white/10 hover:bg-surface-3 flex items-center gap-2 rounded-xl border px-3 py-1.5 text-[0.75rem] font-medium tracking-wider uppercase transition-colors cursor-pointer"
-          >
-            {isMuted ? (
-              <>
-                <svg className="size-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
-                </svg>
-                Unmute Sound
-              </>
-            ) : (
-              <>
-                <svg className="size-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
-                </svg>
-                Sound On
-              </>
-            )}
-          </button>
-        </m.div>
-      }
-      action={
-        <m.div
-          variants={riseGroup}
-          initial="initial"
-          animate="animate"
-          transition={{ delayChildren: 0.2 }}
-          className="space-y-4"
-        >
-          <m.div variants={riseItem}>
-            <Button onClick={handleFinish}>
-              Start game &rarr;
-            </Button>
-          </m.div>
-        </m.div>
-      }
+    <m.main
+      className="cinema"
+      aria-label="Mr. White intro video"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0, y: reduceMotion ? 0 : -direction * 12 }}
+      transition={{ duration: reduceMotion ? 0 : 0.4 }}
     >
-      <div className="flex flex-col items-center justify-center gap-4">
-        {/* Video Player Container */}
-        <m.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.4 }}
-          className="bg-surface-1 border-white/10 relative aspect-video w-full overflow-hidden rounded-3xl border shadow-2xl"
-        >
-          <video
-            ref={videoRef}
-            src="/video.mp4"
-            autoPlay
-            playsInline
-            muted={isMuted}
-            onEnded={handleFinish}
-            onClick={togglePlay}
-            className="h-full w-full object-cover cursor-pointer"
-          />
+      <m.video
+        className="cinema-video"
+        ref={video}
+        src="/video.mp4"
+        aria-label="Mr. White cinematic intro"
+        autoPlay={!reduceMotion}
+        playsInline
+        muted={muted}
+        preload="auto"
+        initial={{ scale: reduceMotion ? 1 : 1.04 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.2, ease: 'easeOut' }}
+        onCanPlay={() => setReady(true)}
+        onPlay={() => setPlaying(true)}
+        onPause={() => setPlaying(false)}
+        onEnded={finish}
+        onError={() => { setFailed(true); setPlaying(false) }}
+        onTimeUpdate={() => {
+          const el = video.current
+          if (el && Number.isFinite(el.duration) && el.duration > 0) {
+            setProgress(el.currentTime / el.duration * 100)
+          }
+        }}
+      />
+      <div className="cinema-shade" aria-hidden="true" />
+      <m.header className="cinema-top" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
+        <span className="cinema-brand"><AgentMark /> MR. WHITE</span>
+        <button className="cinema-control" onClick={finish}>Skip intro <span aria-hidden="true">↗</span></button>
+      </m.header>
 
-          {/* Overlay Controls */}
-          <div className="bg-gradient-to-t from-black/80 via-transparent to-black/30 pointer-events-none absolute inset-0 flex flex-col justify-between p-4">
-            <div className="flex justify-end">
-              {!isPlaying && (
-                <span className="bg-black/60 text-bone rounded-lg px-2.5 py-1 text-xs backdrop-blur-md">
-                  Paused
-                </span>
-              )}
-            </div>
+      {!playing && (ready || failed) && (
+        <div className="cinema-center">
+          {failed ? (
+            <p role="status">The intro couldn’t load.<br />Your game is ready below.</p>
+          ) : (
+            <m.button className="cinema-play" aria-label="Play intro" onClick={() => void togglePlay()} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} whileTap={{ scale: 0.92 }}>
+              <span aria-hidden="true">▶</span>
+            </m.button>
+          )}
+        </div>
+      )}
 
-            {/* Bottom progress bar inside video frame */}
-            <div className="w-full space-y-2">
-              <div className="bg-white/20 h-1.5 w-full overflow-hidden rounded-full backdrop-blur-sm">
-                <div
-                  className="bg-bone h-full transition-all duration-150 ease-linear"
-                  style={{ width: `${progress}%` }}
-                />
-              </div>
-            </div>
-          </div>
-        </m.div>
-      </div>
-    </Screen>
+      <m.div className="cinema-bottom" initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.35, duration: 0.5 }}>
+        <p className="cinema-kicker">GOOD FRIENDS. GREAT LIARS.</p>
+        <h1>TRUST NOBODY.</h1>
+        <div className="cinema-toolbar">
+          <button className="cinema-control" onClick={() => void togglePlay()} disabled={failed} aria-label={playing ? 'Pause intro' : 'Play intro video'}>
+            <span aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span> {playing ? 'Pause' : 'Play'}
+          </button>
+          <button className="cinema-control" onClick={() => setMuted(!muted)} aria-pressed={!muted} aria-label={muted ? 'Turn sound on' : 'Mute sound'}>
+            <span className={playing && !muted ? 'sound-bars active' : 'sound-bars'} aria-hidden="true"><i /><i /><i /><i /></span>
+            {muted ? 'Sound off' : 'Sound on'}
+          </button>
+        </div>
+        <div className="cinema-progress" aria-label="Intro progress" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress)}>
+          <div style={{ transform: `scaleX(${progress / 100})` }} />
+        </div>
+        <button className="cinema-enter" onClick={finish}>Enter the game <span aria-hidden="true">↗</span></button>
+        {!ready && !failed && <p className="cinema-loading" role="status">Loading the intro…</p>}
+      </m.div>
+    </m.main>
   )
 }

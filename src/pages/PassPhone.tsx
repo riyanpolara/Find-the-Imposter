@@ -2,6 +2,7 @@ import { m } from 'framer-motion'
 
 import { Screen } from '@/components/layout/Screen'
 import { Button } from '@/components/ui/Button'
+import { AgentMark } from '@/components/ui/AgentMark'
 import { Progress } from '@/components/ui/Progress'
 import { currentPlayer } from '@/game/gameEngine'
 import { useGame } from '@/hooks/useGame'
@@ -29,7 +30,7 @@ export function PassPhone({ direction }: { direction: number }) {
           <Progress value={dealt} total={game.players.length} />
         </div>
       }
-      action={<Button onClick={() => dispatch({ type: 'PLAYER_READY' })}>I&rsquo;m ready</Button>}
+      action={<Button onClick={() => dispatch({ type: 'PLAYER_READY' })}>I’m {player.name} · Ready</Button>}
     >
       <m.div
         variants={riseGroup}
@@ -37,7 +38,8 @@ export function PassPhone({ direction }: { direction: number }) {
         animate="animate"
         className="flex flex-col items-center gap-6 text-center"
       >
-        <m.p variants={riseItem} className="text-label text-smoke uppercase">
+        <AgentMark className="handoff-mark" />
+        <m.p variants={riseItem} className="text-label text-acid uppercase">
           Pass the phone to
         </m.p>
 

@@ -14,11 +14,11 @@ import { spring } from '@/utils/motion'
  */
 export function Voting({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
+  const [selected, setSelected] = useState<string | null>(null)
   const game = state.game
   if (!game) return null
 
   const alive = activePlayers(game)
-  const [selected, setSelected] = useState<string | null>(null)
 
   return (
     <Screen
@@ -36,7 +36,7 @@ export function Voting({ direction }: { direction: number }) {
             transition={{ delay: 0.08 }}
             className="text-mist pt-3 text-[0.9375rem]"
           >
-            Discuss as a group, then pick one player to eliminate.
+            Discuss out loud. One person selects the player the group wants to vote out.
           </m.p>
         </div>
       }
@@ -47,7 +47,7 @@ export function Voting({ direction }: { direction: number }) {
           }
           disabled={!selected}
         >
-          {selected ? 'Eliminate' : 'Pick someone'}
+          {selected ? `Vote out ${alive.find((p) => p.id === selected)?.name}` : 'Select your suspect'}
         </Button>
       }
     >
@@ -74,7 +74,7 @@ export function Voting({ direction }: { direction: number }) {
                     : 'bg-surface border-white/8 text-bone hover:border-white/20',
                 )}
               >
-                <span className="truncate font-semibold">{player.name}</span>
+                <span className="flex min-w-0 items-center gap-4"><span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/5 text-xs text-acid">{String(i + 1).padStart(2, '0')}</span><span className="truncate font-semibold">{player.name}</span></span>
                 <span
                   className={cn(
                     'grid size-5 shrink-0 place-items-center rounded-full border transition-colors',
@@ -108,7 +108,7 @@ export function Voting({ direction }: { direction: number }) {
       </ul>
 
       <p className="text-smoke pt-4 text-center text-[0.75rem]">
-        The group decides together who to eliminate.
+        One group decision. One vote. Make it count.
       </p>
     </Screen>
   )

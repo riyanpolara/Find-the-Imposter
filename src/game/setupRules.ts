@@ -4,7 +4,7 @@
  */
 
 export const PLAYER_MIN = 3
-export const PLAYER_MAX = 20
+export const PLAYER_MAX = 10
 export const MR_WHITE_MIN = 1
 export const NAME_MAX_LENGTH = 20
 
