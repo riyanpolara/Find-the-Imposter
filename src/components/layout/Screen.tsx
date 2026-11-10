@@ -43,7 +43,7 @@ export function Screen({
   className,
   children,
 }: ScreenProps) {
-  const { dispatch } = useGame()
+  const { state, dispatch } = useGame()
   return (
     <m.div
       custom={direction}
@@ -63,7 +63,7 @@ export function Screen({
       >
         <div className="game-brand">
           <span><AgentMark /> MR. WHITE</span>
-          <HomeButton onClick={() => dispatch({ type: 'GO_HOME' })} />
+          <HomeButton confirmLeave={state.game !== null && state.phase !== 'GAME_OVER'} onClick={() => dispatch({ type: 'GO_HOME' })} />
         </div>
         {header ? <header className="shrink-0">{header}</header> : null}
 

@@ -9,7 +9,6 @@ export function IntroVideo({ direction }: { direction: number }) {
   const reduceMotion = useReducedMotion()
   const video = useRef<HTMLVideoElement>(null)
   const finishing = useRef(false)
-  const [muted, setMuted] = useState(true)
   const [playing, setPlaying] = useState(false)
   const [ready, setReady] = useState(false)
   const [failed, setFailed] = useState(false)
@@ -46,7 +45,6 @@ export function IntroVideo({ direction }: { direction: number }) {
         aria-label="Mr. White cinematic intro"
         autoPlay={!reduceMotion}
         playsInline
-        muted={muted}
         preload="auto"
         initial={{ scale: reduceMotion ? 1 : 1.04 }}
         animate={{ scale: 1 }}
@@ -87,10 +85,6 @@ export function IntroVideo({ direction }: { direction: number }) {
         <div className="cinema-toolbar">
           <button className="cinema-control" onClick={() => void togglePlay()} disabled={failed} aria-label={playing ? 'Pause intro' : 'Play intro video'}>
             <span aria-hidden="true">{playing ? 'Ⅱ' : '▶'}</span> {playing ? 'Pause' : 'Play'}
-          </button>
-          <button className="cinema-control" onClick={() => setMuted(!muted)} aria-pressed={!muted} aria-label={muted ? 'Turn sound on' : 'Mute sound'}>
-            <span className={playing && !muted ? 'sound-bars active' : 'sound-bars'} aria-hidden="true"><i /><i /><i /><i /></span>
-            {muted ? 'Sound off' : 'Sound on'}
           </button>
         </div>
         <div className="cinema-progress" aria-label="Intro progress" role="progressbar" aria-valuemin={0} aria-valuemax={100} aria-valuenow={Math.round(progress)}>
