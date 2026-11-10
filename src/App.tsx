@@ -48,6 +48,10 @@ function CurrentScreen() {
   const { state } = useGame()
   const Screen = SCREENS[state.phase] ?? IntroVideo
 
+  // Home ends the session immediately; don't keep an outgoing private screen
+  // mounted while its exit animation finishes.
+  if (state.phase === 'HOME') return <Home direction={state.direction} />
+
   return (
     // `mode="wait"` guarantees the outgoing screen is gone before the next
     // paints — non-negotiable for a pass-the-phone game where the previous

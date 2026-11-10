@@ -1,6 +1,7 @@
 import { m, useReducedMotion } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { AgentMark } from '@/components/ui/AgentMark'
+import { HomeButton } from '@/components/ui/HomeButton'
 import { useGame } from '@/hooks/useGame'
 
 export function IntroVideo({ direction }: { direction: number }) {
@@ -65,7 +66,7 @@ export function IntroVideo({ direction }: { direction: number }) {
       <div className="cinema-shade" aria-hidden="true" />
       <m.header className="cinema-top" initial={{ opacity: 0, y: -12 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }}>
         <span className="cinema-brand"><AgentMark /> MR. WHITE</span>
-        <button className="cinema-control" onClick={finish}>Skip intro <span aria-hidden="true">↗</span></button>
+        <HomeButton onClick={finish} />
       </m.header>
 
       {!playing && (ready || failed) && (

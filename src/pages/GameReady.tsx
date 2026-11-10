@@ -16,12 +16,7 @@ export function GameReady({ direction }: { direction: number }) {
     <Screen
       direction={direction}
       action={
-        <div className="space-y-2.5">
-          <Button onClick={() => dispatch({ type: 'START_ROUND' })}>Start round 1</Button>
-          <Button variant="ghost" size="md" block onClick={() => dispatch({ type: 'GO_HOME' })}>
-            Home
-          </Button>
-        </div>
+        <Button onClick={() => dispatch({ type: 'START_ROUND' })}>Start round 1</Button>
       }
     >
       <m.div

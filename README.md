@@ -48,7 +48,7 @@ The game is played face to face. Roles, words, clues, voting, and win checks run
 8. If a Mr. White is caught, they get **one guess** at the secret word. A correct guess wins for Mr. White immediately. After a wrong guess, they are out; the word stays hidden if another Mr. White is still playing.
 9. Civilians win when every Mr. White is eliminated and the last guess fails. Mr. Whites also win if they equal or outnumber the remaining civilians.
 
-**Play Again** keeps the group and word settings and deals a new random game. **Back to home** returns to the lobby.
+Tap **Home** in the top right of any setup or game screen to return to the lobby. This ends the current game and keeps the names and setup choices for the next one. On the intro, **Home** skips the video. After a game ends, **Play Again** deals fresh cards to the same group, and **Back to home** returns to the lobby.
 
 ## Word bank
 

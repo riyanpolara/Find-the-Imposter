@@ -3,6 +3,8 @@ import { m } from 'framer-motion'
 import { cn } from '@/utils/cn'
 import { pageVariants, spring } from '@/utils/motion'
 import { AgentMark } from '@/components/ui/AgentMark'
+import { HomeButton } from '@/components/ui/HomeButton'
+import { useGame } from '@/hooks/useGame'
 
 type ScreenProps = {
   /** Direction of travel: 1 moving forward, -1 going back. */
@@ -41,6 +43,7 @@ export function Screen({
   className,
   children,
 }: ScreenProps) {
+  const { dispatch } = useGame()
   return (
     <m.div
       custom={direction}
@@ -58,7 +61,10 @@ export function Screen({
           className,
         )}
       >
-        <div className="game-brand"><span><AgentMark /> MR. WHITE</span><span>TRUST NOBODY. ↗</span></div>
+        <div className="game-brand">
+          <span><AgentMark /> MR. WHITE</span>
+          <HomeButton onClick={() => dispatch({ type: 'GO_HOME' })} />
+        </div>
         {header ? <header className="shrink-0">{header}</header> : null}
 
         <main
