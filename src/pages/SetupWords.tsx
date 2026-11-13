@@ -18,11 +18,11 @@ export function SetupWords({ direction }: { direction: number }) {
     action={<Button onClick={() => dispatch({ type: 'NEXT' })}>Continue · Add names ↗</Button>}
   >
     <m.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} className="word-setup">
-      <p className="setup-kicker">03 / Pick your challenge</p>
-      <h1 className="text-hero">SET THE<br /><span className="text-acid">DIFFICULTY.</span></h1>
-      <p className="setup-note">Choose words your group will enjoy bluffing about.</p>
+      <p className="setup-kicker">03 / Select word level</p>
+      <h1 className="text-hero">CHOOSE YOUR<br /><span className="text-acid">WORD LEVEL.</span></h1>
+      <p className="setup-note">Choose Easy, Medium, or Hard. The game will use words from your selected level.</p>
       <fieldset className="word-options">
-        <legend>How tricky?</legend>
+        <legend>Word level</legend>
         <div className="word-segment">
           {DIFFICULTIES.map((item, i) => <label key={item.id} className="word-option">
             <input type="radio" name="difficulty" value={item.id} checked={options.difficulty === item.id} onChange={() => dispatch({ type: 'SET_DIFFICULTY', difficulty: item.id })} />

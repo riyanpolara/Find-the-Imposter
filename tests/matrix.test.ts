@@ -181,7 +181,7 @@ describe.each(CONFIGS)('$players players / $whites Mr White(s)', ({ players, whi
 
     const again = drive(state, { type: 'PLAY_AGAIN' })
     expect(again.phase).toBe('PASS_PHONE')
-    expect(again.game!.players.map((p) => p.name)).toEqual(roster)
+    expect(again.game!.players.map((p) => p.name).sort()).toEqual([...roster].sort())
     expect(again.game!.players).toHaveLength(players)
     expect(again.game!.players.every((p) => p.role === null)).toBe(true)
     expect(again.game!.votes).toHaveLength(0)

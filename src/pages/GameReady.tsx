@@ -2,7 +2,7 @@ import { m } from 'framer-motion'
 
 import { Screen } from '@/components/layout/Screen'
 import { Button } from '@/components/ui/Button'
-import { startingIndexForRound } from '@/game/roundManager'
+import { currentPlayer } from '@/game/gameEngine'
 import { useGame } from '@/hooks/useGame'
 import { riseGroup, riseItem } from '@/utils/motion'
 
@@ -10,7 +10,7 @@ export function GameReady({ direction }: { direction: number }) {
   const { state, dispatch } = useGame()
   const game = state.game
   if (!game) return null
-  const starter = game.players[startingIndexForRound(game, 1)]
+  const starter = currentPlayer(game)
 
   return (
     <Screen

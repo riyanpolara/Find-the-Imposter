@@ -3,6 +3,7 @@ import { beforeEach, describe, expect, it } from 'vitest'
 import { clearState, loadState, saveState, STORAGE_KEY } from '@/game/persistence'
 import type { AppState } from '@/game/store'
 import { civilians, dealtGame, drive, setupGame, voteOut } from './helpers'
+import { availableCards } from '@/game/cardManager'
 
 /** Minimal in-memory localStorage; swapped per test to simulate failures. */
 function useMemoryStorage() {
@@ -44,6 +45,52 @@ beforeEach(() => {
 })
 
 describe('refreshing during card distribution', () => {
+  it('can reopen every player’s chosen card and finish dealing after repeated returns', () => {
+    let state = setupGame(6, 2)
+    const gameId = state.game!.id
+    const secretWord = state.game!.secretWord
+
+    for (let index = 0; index < 6; index++) {
+      state = drive(state,
+        { type: 'PLAYER_READY' },
+        { type: 'SELECT_CARD', cardId: availableCards(state.game!.cards)[0].id },
+      )
+      const dealt = state.game
+
+      for (let returnVisit = 0; returnVisit < 2; returnVisit++) {
+        saveState(state)
+        state = loadState()!
+        expect(state.phase).toBe('PASS_PHONE')
+        expect(state.game!.currentPlayerIndex).toBe(index)
+        state = drive(state, { type: 'PLAYER_READY' })
+        expect(state.phase).toBe('CARD_REVEAL')
+        expect(state.game).toEqual(dealt)
+      }
+
+      state = drive(state, { type: 'HIDE_CARD' })
+      expect(state.phase).toBe(index === 5 ? 'GAME_READY' : 'PASS_PHONE')
+    }
+
+    state = drive(state, { type: 'START_ROUND' }, { type: 'START_VOTING' })
+    expect(state.phase).toBe('VOTING')
+    expect(state.game!.id).toBe(gameId)
+    expect(state.game!.secretWord).toBe(secretWord)
+    expect(new Set(state.game!.players.map((player) => player.cardId)).size).toBe(6)
+  })
+
+  it('recovers an existing save stranded on the card grid with a card already assigned', () => {
+    const start = setupGame(6, 2)
+    const revealing = drive(start,
+      { type: 'PLAYER_READY' },
+      { type: 'SELECT_CARD', cardId: start.game!.cards[0].id },
+    )
+    saveState({ ...revealing, phase: 'CARD_DISTRIBUTION' })
+    const resumed = drive(loadState()!, { type: 'PLAYER_READY' })
+    expect(resumed.phase).toBe('CARD_REVEAL')
+    expect(resumed.game).toEqual(revealing.game)
+    expect(drive(resumed, { type: 'HIDE_CARD' }).game!.currentPlayerIndex).toBe(1)
+  })
+
   it('rewinds a half-revealed card to the handoff gate', () => {
     // Mid-reveal the card is already dealt. Restoring straight back onto
     // CARD_REVEAL would put someone's role on screen for whoever picks the
@@ -61,7 +108,13 @@ describe('refreshing during card distribution', () => {
     expect(picking.phase).toBe('CARD_DISTRIBUTION')
 
     saveState(picking)
-    expect(loadState()!.phase).toBe('PASS_PHONE')
+    const restored = loadState()!
+    expect(restored.phase).toBe('PASS_PHONE')
+    const ready = drive(restored, { type: 'PLAYER_READY' })
+    expect(ready.phase).toBe('CARD_DISTRIBUTION')
+    const revealed = drive(ready, { type: 'SELECT_CARD', cardId: ready.game!.cards[0].id })
+    expect(revealed.phase).toBe('CARD_REVEAL')
+    expect(drive(revealed, { type: 'HIDE_CARD' }).game!.currentPlayerIndex).toBe(1)
   })
 
   it('keeps the cards already dealt', () => {

@@ -1,4 +1,5 @@
 import type { Game, Player } from '@/types/game'
+import { pickOne, type Rng } from './rng'
 
 /** Players still in the game, in seating order. */
 export function activePlayers(game: Game): Player[] {
@@ -27,14 +28,11 @@ export function firstActiveIndex(game: Game): number {
   return index
 }
 
-/**
- * Who opens the round. The starter rotates each round so the same person
- * isn't always forced to give the first (hardest) clue.
- */
-export function startingIndexForRound(game: Game, round: number): number {
+/** Choose the clue starter randomly from the players still in the game. */
+export function startingIndexForRound(game: Game, rng?: Rng): number {
   const active = activePlayers(game)
   if (active.length === 0) return -1
-  const starter = active[(round - 1) % active.length]
+  const starter = pickOne(active, rng)
   return game.players.findIndex((player) => player.id === starter.id)
 }
 

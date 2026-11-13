@@ -3,11 +3,12 @@ import { DEFAULT_WORD_OPTIONS, resolveWordOptions, type Difficulty, type WordPac
 import {
   advanceToNextPlayer,
   createGame,
+  currentPlayer,
   dealingComplete,
   selectCard,
   startRound,
 } from './gameEngine'
-import { activePlayers } from './roundManager'
+import { activePlayers, startingIndexForRound } from './roundManager'
 import {
   clampMrWhiteCount,
   clampPlayerCount,
@@ -214,8 +215,10 @@ export function reducer(state: AppState, action: Action): AppState {
     }
 
     case 'PLAYER_READY':
-      if (state.phase !== 'PASS_PHONE') return state
-      return forward(state, 'CARD_DISTRIBUTION')
+      if (state.phase !== 'PASS_PHONE' || !state.game) return state
+      // Restoring a reveal keeps the dealt card but rewinds to the privacy gate.
+      // Once its owner is ready, reopen that card instead of dealing a second one.
+      return forward(state, currentPlayer(state.game).cardId ? 'CARD_REVEAL' : 'CARD_DISTRIBUTION')
 
     case 'SELECT_CARD': {
       if (state.phase !== 'CARD_DISTRIBUTION' || !state.game) return state
@@ -225,7 +228,9 @@ export function reducer(state: AppState, action: Action): AppState {
     case 'HIDE_CARD': {
       if (state.phase !== 'CARD_REVEAL' || !state.game) return state
       if (dealingComplete(state.game)) {
-        return forward(state, 'GAME_READY', { game: { ...state.game, currentPlayerIndex: 0 } })
+        return forward(state, 'GAME_READY', {
+          game: { ...state.game, currentPlayerIndex: startingIndexForRound(state.game) },
+        })
       }
       return forward(state, 'PASS_PHONE', { game: advanceToNextPlayer(state.game) })
     }

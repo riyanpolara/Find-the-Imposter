@@ -1,7 +1,7 @@
 import type { Card, Game, Player, SetupConfig } from '@/types/game'
 import { resolveWordOptions } from '@/data/words'
 import { assignCard, findCard, generateCards } from './cardManager'
-import { makeId, type Rng } from './rng'
+import { makeId, shuffle, type Rng } from './rng'
 import { generateRoles } from './roleManager'
 import { startingIndexForRound } from './roundManager'
 import { isValidConfig, normaliseName } from './setupRules'
@@ -27,7 +27,8 @@ export function createGame(config: SetupConfig, rng?: Rng): Game {
   const wordOptions = resolveWordOptions(config)
   const { category, word } = pickSecretWord(rng, wordOptions)
 
-  const players: Player[] = names.map((name) => ({
+  // Fix a random handoff order for this game, including the first player.
+  const players: Player[] = shuffle(names, rng).map((name) => ({
     id: makeId('player'),
     name: normaliseName(name),
     role: null,
@@ -88,10 +89,14 @@ export function advanceToNextPlayer(game: Game): Game {
 }
 
 /** Kicks off round `n`, putting the phone on that round's starting player. */
-export function startRound(game: Game): Game {
+export function startRound(game: Game, rng?: Rng): Game {
   const round = game.currentRound + 1
   const withRound = { ...game, currentRound: round }
-  return { ...withRound, currentPlayerIndex: startingIndexForRound(withRound, round) }
+  // The first starter was already selected when dealing finished and shown on GameReady.
+  const currentPlayerIndex = game.currentRound === 0
+    ? game.currentPlayerIndex
+    : startingIndexForRound(game, rng)
+  return { ...withRound, currentPlayerIndex }
 }
 
 /** Fresh roles, word and cards; same people. Used by "Play Again". */

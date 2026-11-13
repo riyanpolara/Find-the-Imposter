@@ -1,6 +1,8 @@
-import { describe, expect, it } from 'vitest'
+import { describe, expect, it, vi } from 'vitest'
 
-import { activePlayers, turnOrder } from '@/game/roundManager'
+import { startRound } from '@/game/gameEngine'
+import * as roundManager from '@/game/roundManager'
+import { activePlayers, startingIndexForRound, turnOrder } from '@/game/roundManager'
 import { reducer } from '@/game/store'
 import {
   eligibleTargets,
@@ -20,16 +22,53 @@ describe('round progression', () => {
     expect(turnOrder(s.game!, s.game!.currentPlayerIndex)).toHaveLength(10)
   })
 
-  it('rotates the opening player each round', () => {
+  it('randomly chooses the opening player for the next round', () => {
     let s = drive(dealtGame(8, 2), { type: 'START_ROUND' })
-    const first = turnOrder(s.game!, s.game!.currentPlayerIndex)[0].name
 
     const victim = activePlayers(s.game!).find((p) => p.role === 'CIVILIAN')!
     s = voteOut(s, victim.id)
-    s = drive(s, { type: 'RESOLVE_VOTE' }, { type: 'CONTINUE_AFTER_ELIMINATION' })
+    s = drive(s, { type: 'RESOLVE_VOTE' })
+    const expectedStarter = activePlayers(s.game!).at(-1)!
+    const random = vi.spyOn(roundManager, 'startingIndexForRound')
+      .mockReturnValue(s.game!.players.findIndex((player) => player.id === expectedStarter.id))
+    try {
+      s = drive(s, { type: 'CONTINUE_AFTER_ELIMINATION' })
+    } finally {
+      random.mockRestore()
+    }
 
     expect(s.game!.currentRound).toBe(2)
-    expect(turnOrder(s.game!, s.game!.currentPlayerIndex)[0].name).not.toBe(first)
+    expect(turnOrder(s.game!, s.game!.currentPlayerIndex)[0].id).toBe(activePlayers(s.game!).at(-1)!.id)
+  })
+
+  it('selects a random first clue giver after dealing and keeps them when the round starts', () => {
+    const random = vi.spyOn(roundManager, 'startingIndexForRound').mockReturnValue(6)
+    try {
+      const ready = dealtGame(8, 2)
+      expect(ready.phase).toBe('GAME_READY')
+      expect(ready.game!.currentPlayerIndex).toBe(6)
+      random.mockReturnValue(0)
+      const round = drive(ready, { type: 'START_ROUND' })
+      expect(round.game!.currentPlayerIndex).toBe(6)
+      expect(round.game!.currentRound).toBe(1)
+    } finally {
+      random.mockRestore()
+    }
+  })
+
+  it('can pick every active player while skipping eliminated players', () => {
+    const game = dealtGame(6, 2).game!
+    game.players[1].eliminated = true
+    game.players[4].eliminated = true
+    const eligible = [0, 2, 3, 5]
+    eligible.forEach((index, position) => {
+      const rng = () => (position + 0.5) / eligible.length
+      expect(startingIndexForRound(game, rng)).toBe(index)
+      const round = startRound({ ...game, currentRound: 1 }, rng)
+      expect(round.currentPlayerIndex).toBe(index)
+      expect(turnOrder(round, index).map((player) => player.id).sort())
+        .toEqual(activePlayers(game).map((player) => player.id).sort())
+    })
   })
 
   it('never opens a round with an eliminated player', () => {

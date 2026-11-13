@@ -206,7 +206,7 @@ describe('Play Again', () => {
     const after = drive(before, { type: 'PLAY_AGAIN' })
 
     expect(after.phase).toBe('PASS_PHONE')
-    expect(after.game!.players.map((p) => p.name)).toEqual(roster)
+    expect(after.game!.players.map((p) => p.name).sort()).toEqual([...roster].sort())
     expect(after.setup.playerCount).toBe(6)
     expect(after.setup.mrWhiteCount).toBe(2)
 

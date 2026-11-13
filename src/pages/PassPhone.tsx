@@ -18,6 +18,7 @@ export function PassPhone({ direction }: { direction: number }) {
   if (!game) return null
   const player = currentPlayer(game)
   const dealt = game.players.filter((p) => p.role !== null).length
+  const cardNumber = player.cardId ? dealt : dealt + 1
 
   return (
     <Screen
@@ -25,7 +26,7 @@ export function PassPhone({ direction }: { direction: number }) {
       header={
         <div className="space-y-2.5">
           <p className="text-label text-smoke uppercase tabular-nums">
-            Card {dealt + 1} of {game.players.length}
+            Card {cardNumber} of {game.players.length}
           </p>
           <Progress value={dealt} total={game.players.length} />
         </div>
